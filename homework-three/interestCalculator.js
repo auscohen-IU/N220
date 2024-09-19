@@ -8,8 +8,8 @@ const timeAmmount = parseFloat(document.getElementById("tInput").value);
 
 // Interest rate is the formula below. grandTotal is the final amount of money someone will have.
 const totalInterest = (1 + (growthRate * timeAmmount));
-
 const grandTotal = (totalInterest * principalAmmount);
+
 
 // finalResults() should result in the text being displayed at the bottom of the page along with the calculations. 
 function finalResults(){
