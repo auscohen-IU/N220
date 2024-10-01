@@ -18,3 +18,4 @@ Description:
             -inner.HTML(), etc.
         -Being able to compare numbers or strings
         -How to create an Object
+    -Finished class with another Kahoot!
