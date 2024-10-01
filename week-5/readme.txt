@@ -14,3 +14,4 @@ Description:
     Class notes for week 5. 
     2 opertunities to resubmit projects in the class.
         -Around week 8, 12, and 14.
+    Had to leave class early on Tuesday Week 5, waiting on class to be posted in canvas before following along.
