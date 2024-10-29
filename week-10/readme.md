@@ -3,7 +3,7 @@ Name:
 Date: 
     {{date}}
 URL:
-
+    http://127.0.0.1:5500/week-10/index.html
 Description:
     - Came in a little late, Prof was talking about Assignment 5, **nested logic**.
         - Sounds like the goal is to do a choose your own adventure style thing. User inputs something, JavaScript spits back out response. 
