@@ -54,8 +54,12 @@ function showUserColors(){
     }
 }
 
-function changeUserColor(userColorIndex){}
+function changeUserColor(userColorIndex){
+    const userColorRef = document.getElementById(`user-color-${userColorIndex}`);
+    console.log(userColorRef.value);
+}
 
 function openColorChanger(userColorIndex){
     console.log(userColorIndex);
+    document.getElementById(`user-color-${userColorIndex}`).click();
 }
