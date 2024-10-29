@@ -10,3 +10,4 @@ Description:
     - codepen.io
         - Prof just casually opened this website and started a live preview of HTML, CSS, and JS to showcase putting an image in an HTML file. 
     - If someone uses a dark mode enabler, is it just a JS file that is placed after every other JS file that changes the background color to a dark theme?
+    - I feel like we're going hard in the paint rn.
