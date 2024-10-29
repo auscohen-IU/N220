@@ -14,3 +14,5 @@ Description:
     - Using FireFox has led to some problems about how the code is read on the browser. 
     - Got *lost* in the sauce when we started going over the revertLastColor section of the JS file.
     - Review **Loops!** The next few weeks are going to be how to implement API's and how to use in-browser debug things. 
+    - **Re-do** Two Assignments!
+        - Dec 3rd!
