@@ -16,3 +16,5 @@ Description:
     - Review **Loops!** The next few weeks are going to be how to implement API's and how to use in-browser debug things. 
     - **Re-do** Two Assignments!
         - Dec 3rd!
+
+- Next summer, if we have time, teach Megan HTML in one week.

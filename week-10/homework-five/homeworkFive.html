@@ -4,18 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HomeWork Five</title>
+    <style>
+        .bodyGeneral {
+            margin: 25px;
+            padding: 25px;
+            background-color: bisque;
+            text-align: center;
+        }
+    </style>
 </head>
-<body>
+<body class="bodyGeneral">
     <div style="border: 20px black solid;">
         <h1>Choose Your Own Adventure!</h1>
     </div>
     <br/>
 
-    <div>
-        <button onclick="startAdventure()">Start</button>
-        <section id="adventureStart"></section>
-    </div>
-
+    <button onclick="initiateAdventure()"> Start </button>
+    <br/><br/>
+    <section id="adventureStart"></section>
+    <section id="choiceOne"></section>
+    <section id="choiceTwo"></section>
+    <section id="choiceThree"></section>
+    <section id="choiceFour"></section>
 
     <script src="homeworkFive.js"></script>
 </body>
