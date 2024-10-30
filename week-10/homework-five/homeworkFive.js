@@ -1,4 +1,5 @@
 // 0 - Starting the Adventure
+console.log("You're not supposed to look here! But since you are here, I might as well tell you the way out. It doesn't hurt to illuminate the situation. Staying on the offensive and keeping on your toes is important down here. Don't be afraid to take your time though. The right tools for the right job.")
 let playerChoice = ""; // Variable to store the player's choice
 let isFinished = false;
 
@@ -197,7 +198,7 @@ function fleeFromDodge(){
 
 // trueEnding()
 function searchBeatenGoblin(){
-    document.getElementById("choiceThree").innerHTML += "You take a moment to search the Goblin's body. You find some of your equipment! While it's not much, it does mean that you have a small shield and a knife to defend yourself with. With this, you feel a glimmer of hope.";
+    document.getElementById("choiceThree").innerHTML += "You take a moment to search the Goblin's body. You find some of your equipment! While it's not much, it does mean that you have a small shield and a knife to defend yourself with. With this, you feel a glimmer of hope." +
     `
     <br/><br/>
     <button onclick="trueEnding()">Leave the cave.</button>
