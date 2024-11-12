@@ -36,6 +36,15 @@ function clickBox(e) {
     e.currentTarget.style.backgroundColor = "lightcoral";
   }
 
+  /**
+   * - Need to finish refresh the tab whenever the debugger is launched on FireFox. 
+   * - Will help go through code and will run the webpage as the browser reads it, so you can see when something breaks. 
+   * - Lets you pick and choose what you want to see in use in your code. So it's useful for longer strings of code. 
+   * - Don't leave debugger in the code!
+   */
+
+  debugger;
+
   boxFormRef.style.display = "block";
   document.getElementById("boxText").value = e.currentTarget.dataset.text;
   document.getElementById("changeBox").onclick = changeText.bind(e.currentTarget);
