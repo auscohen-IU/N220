@@ -70,4 +70,4 @@
             - <input type="text">
         - Password:
             - type="password"
-            - <input type="password">
+            - <input type="password" class="input">
