@@ -40,3 +40,34 @@
 
 
 ## Final Project Outline
+
+### Pre-Work:
+
+1. Create the outline and fulfil basic requirements for the page.
+    1. HTML
+        1. Head
+            - Title
+            - (Styling)
+        2. Body
+            - Sections
+                - Login
+                - Blocks for list
+                - Dashboard
+        3. Link the .js file
+    2. JAVASCRIPT
+        1. Ensure that the .js file is connected with the HTML via a <ins>console.log("JavaScript Connected!");</ins>
+    3. CSS
+        1. Style the webpage myself or with the provided [CSS file](https://iu.instructure.com/courses/2266362/assignments/16598858?module_item_id=33386779) listed at the bottom of the assignment. 
+
+>CSS is optional. I can style in the HTML file in necessary. 
+
+### Login Form:
+
+1. Fields for **Username & Password**
+    1. Input tags for both, but with different types:
+        - Username:
+            - type="text"
+            - <input type="text">
+        - Password:
+            - type="password"
+            - <input type="password">
