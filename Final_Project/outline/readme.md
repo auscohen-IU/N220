@@ -4,17 +4,17 @@
 
 ## Final Project Info
 
-### Name: 
+#### Name: 
 
     Austin Cohen
 
 
-### Project Name:
+#### Project Name:
 
     Personal Task Manager Web Application
 
 
-### What are the requirements? | [Canvas Link](https://iu.instructure.com/courses/2266362/assignments/16598858?module_item_id=33386779)
+#### What are the requirements? | [Canvas Link](https://iu.instructure.com/courses/2266362/assignments/16598858?module_item_id=33386779)
 - Login Form
     - Password must be an input type password
     - Password must be at least 8 characters long
@@ -41,7 +41,7 @@
 
 ## Final Project Outline
 
-### Pre-Work:
+#### Pre-Work:
 
 1. Create the outline and fulfil basic requirements for the page.
     1. HTML
@@ -61,7 +61,7 @@
 
 >CSS is optional. I can style in the HTML file in necessary. 
 
-### Login Form:
+#### Login Form:
 
 1. Fields for **Username & Password**
     1. Input tags for both, but with different types:
