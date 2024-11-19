@@ -1,12 +1,20 @@
-## Final Project Outline
+ ## GitHub Link
+ >https://github.com/auscohen-IU/N220/tree/main/Final_Project/outline
+
+
+## Final Project Info
 
 ### Name: 
->Austin Cohen
+
+    Austin Cohen
+
 
 ### Project Name:
->Personal Task Manager web application
 
-### What will it include?
+    Personal Task Manager Web Application
+
+
+### What are the requirements? | [Canvas Link](https://iu.instructure.com/courses/2266362/assignments/16598858?module_item_id=33386779)
 - Login Form
     - Password must be an input type password
     - Password must be at least 8 characters long
@@ -30,5 +38,5 @@
     - Tie tasks to the user signed in
     - Allow users to see only tasks that they have created
 
- ## GitHub Link
- >
+
+## Final Project Outline
