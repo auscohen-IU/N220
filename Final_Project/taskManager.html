@@ -2,18 +2,70 @@
 <html lang="en">
 <head>
 
-    <style>
-        
-    </style>
+    <!-- STYLE IS LITERALLY OVER THE SUBSTANCE!!! -->
+    <!-- I did use ChatGPT to help me figure out how should best style this to divide the page in half -->
+     <!-- I'll do the style at the end -->
+
+    <!-- <style>
+        .container {
+            display: flex;
+            height: 20%;
+            background-color: #F8BD7F;
+            border: #95B8D1, solid;
+            align-items: center;
+        }
+        .half {
+            width: 50%;
+            padding: 20px;
+        }
+        .leftHalf {
+            background-color: #F5AC72;
+        }
+        .rightHalf {
+            background-color: #FACFAD;
+        }
+    </style> -->
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Task Manager</title>
+
 </head>
-<body class="container">
 
-    
+<body>
 
+    <!-- Login Form -->
+    <form id="loginForm">
+    <div>
+        <div>
+            <h1>
+                Personal Task Manager
+            </h1>
+        </div>
+        <div>
+            <div>
+                <h4>
+                    Username:
+                </h4>
+                <input type="text" id="usernameInput" name="username" required>
+            </div>
+            <div>
+                <h4>
+                    Password:
+                </h4>
+                <input type="password" id="passwordInput" name="password" required>
+            </div>
+            <div>
+                <button id="loginButton" onclick="loginCheck()">
+                    Login
+                </button>
+            </div>
+        </div>
+    </div>
+    </form>
+
+
+    <!-- Link to the .js file -->
     <script src="taskManager.js"></script>
 </body>
 </html>
