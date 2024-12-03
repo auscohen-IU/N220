@@ -1,3 +1,3 @@
 // .js file connected?
-console.log("Hello World!");
+console.log("JavaScript file connected!");
 
