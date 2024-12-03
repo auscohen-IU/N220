@@ -1,5 +1,12 @@
-#headerSection {
+/* I'm going to make this as beige as possible. Beige means business, and business is success! */
+
+#bodyStyling {
+    padding: 2%;
     background-color: #f5ac72;
+}
+
+#headerSection {
+    background-color: #F8BD7F;
     border-color: #95b8d1;
     border-style: solid;
     padding: 25px;
