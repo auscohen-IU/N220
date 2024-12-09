@@ -1,18 +1,19 @@
 // .js file connected?
 console.log("taskManager.js file connected!");
 
-// Username and Password values
+// Username and Password variables
 let username = document.getElementById("usernameInput").value;
 let password = document.getElementById("passwordInput").value;
 
-// Known Users
-const knownUsers = [
-    {username = "admin", password = "admin"}
-]
+// Admin Login & Known Users
+const adminLogin = {
+    username:"admin",
+    password:"admin"
+};
 
-const user = knownUsers.find(user => user.username === username)
+ const knownUsers = [adminLogin];
 
-// Login button runs the check
-function loginCheck {
-    
+//  Login function
+function goodLogin(){
+    document.getElementById("dashboard").innerHTML += dashboard
 }
