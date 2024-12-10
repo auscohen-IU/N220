@@ -10,10 +10,49 @@
 
 <body>
 
-    <!-- Login Form -->
-    
+    <h1>
+        Personal Task Manager
+    </h1>
+
+    <!-- Username and Password Inputs -->
+        <div>
+            <h3>
+                Username
+            </h3>
+            <input id="usernameInput" type="text" name="usernameInput">
+
+            <h3>
+                Password
+            </h3>
+            <input id="passwordInput" type="password" name="passwordInput">
+        </div>
+
+        <!-- Login/Logout Buttons -->
+        <div>
+            <button id="loginButton" onclick="loginAttempt()">
+                Login
+            </button>
+
+            <button id="logoutButton">
+                Logoff
+            </button>
+        </div>
+        <br>
+
+    <!-- Location where the list will populate -->
+     <div>
+        <h2>
+            Task List
+        </h2>
+        <input id="taskInput">
+        <button>
+            Add Task
+        </button>
+        <section id="taskList"></section>
+    </div>
 
     <!-- Link to the .js file -->
     <script src="taskManager.js"></script>
+
 </body>
 </html>
