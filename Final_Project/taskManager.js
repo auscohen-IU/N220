@@ -1,31 +1,50 @@
-// .js file connected?
 console.log("taskManager.js file connected!");
-
-// Variables for login info
-const username = document.getElementById("usernameInput").value;
-const password = document.getElementById("passwordInput").value;
 
 // Array consisting of users. Users consist of an object with a username and password.
 const knownUsers = [
-    {username:"admin", password:"Pa$5W0rd"}
-]
+    { username: "admin", password: "Pa$5W0rd" }
+];
 
-// Login button checks to see if the inputted username and password is an object in the knownUsers[]
-function loginAttempt(){
-    // Check if the username exists in the knownUsers array
-    const user = knownUsers.find(user => user.username === usernameInput);
+// Login attempt function
+function loginAttempt() {
+    const username = document.getElementById("usernameInput").value;
+    const password = document.getElementById("passwordInput").value;
+
+    const user = knownUsers.find(user => user.username === username);
     if (!user) {
-        // If username does not exist, prompt the user to create an account
         alert('Username not found. Please create an account.');
     } else {
-        // If the username exists, check if the password matches
-        if (user.password !== passwordInput) {
-            // If the password does not match, show an error
-            alert('ERROR: Incorrect password.');
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$]).+$/;
+        if (!passwordRegex.test(password)) {
+            alert('ERROR: Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character (e.g., !, @, #, $).');
+        } else if (user.password !== password) {
+            alert('Incorrect password.');
         } else {
-            // If the username and password match, proceed to the next step (e.g., dashboard)
             alert('Login successful! Welcome to your task manager.');
-            // You can redirect or load the task manager page here
+            document.getElementById("secondButton").innerText = "Logout";
+            document.getElementById("secondButton").onclick = logout;
         }
     }
 }
+
+// Logout function
+function logout() {
+    alert('You have been logged out.');
+    document.getElementById("secondButton").innerText = "Add User";
+    document.getElementById("secondButton").onclick = null; // Disable logout functionality
+}
+
+// Add task functionality
+document.querySelector('button[type="button"]').addEventListener('click', function() {
+    const taskInput = document.getElementById('taskInput');
+    const taskList = document.getElementById('taskList');
+
+    if (taskInput.value.trim() !== '') {
+        const taskItem = document.createElement('div');
+        taskItem.textContent = taskInput.value;
+        taskList.appendChild(taskItem);
+        taskInput.value = ''; // Clear input after adding task
+    } else {
+        alert('Please enter a task.');
+    }
+});
