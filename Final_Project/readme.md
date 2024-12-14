@@ -13,7 +13,7 @@
 
 ## What are the requirements? | [Canvas Link](https://iu.instructure.com/courses/2266362/assignments/16598858?module_item_id=33386779)
 
- ### GitHub Link | [Github](https://github.com/auscohen-IU/N220/tree/main/Final_Project/outline)
+ ### GitHub Link | [Github](https://github.com/auscohen-IU/N220/tree/main/Final_Project)
 
 
 - Login Form
