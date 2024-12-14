@@ -102,6 +102,7 @@ function renderTasks() {
         taskItem.classList.add('taskItem');
         taskItem.innerHTML = `
             <span>${task.description}</span>
+            <input type="color" value="${task.color}" onchange="changeTaskColor(${task.id}, this.value)">
             <button onclick="deleteTask(${task.id})">Delete</button>
             <button onclick="moveTask(${index}, 'up')">Move Up</button>
             <button onclick="moveTask(${index}, 'down')">Move Down</button>
@@ -120,7 +121,8 @@ function addTask() {
     // Create a new task object with a unique ID using the taskIdCounter
     const newTask = {
         id: taskIdCounter++,
-        description: taskDescription
+        description: taskDescription,
+        color: '#FDF0D5'
     };
 
     // Add the new task to the current user's tasks array
@@ -154,4 +156,12 @@ function logout() {
     tasks = [];
     document.getElementById('loginContainer').style.display = 'block';
     document.getElementById('dashboardContainer').style.display = 'none';
+}
+
+function changeTaskColor(taskId, newColor) {
+    const task = currentUser.tasks.find(task => task.id === taskId);
+    if (task) {
+        task.color = newColor;
+        renderTasks();
+    }
 }

@@ -4,17 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Task Manager</title>
+
+    <style>
+
+        body {
+            background-color: #3A3335;
+            font-family: 'Courier New', Courier, monospace;
+            border: thick, solid #FDF0D5;
+        }
+
+        h2, h3 {
+            text-align: center;
+        }
+
+        #loginContainer {
+            background-color: #EB5E55;
+            padding: 15px;
+            border-radius: 20px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #dashboardContainer {
+            background-color: #C6D8D3;
+            padding: 15px;
+            border-radius: 20px;
+            margin: 20px, auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #taskList {
+            padding-bottom: 20px;
+        }
+
+    </style>
+
 </head>
 <body>
 
     <div id="loginContainer">
-        <h2>Login</h2>
+        <h2>Task Manager Login</h2>
         <form id="loginForm" onsubmit="return validateLogin()">
             <label for="usernameInput">Username:</label>
             <input type="text" id="usernameInput" required>
+            <br>
             
             <label for="passwordInput">Password:</label>
             <input type="password" id="passwordInput" required>
+            <br>
             
             <button type="submit" id="loginButton">Login</button>
             <div id="loginErrorMessage" class="errorMessage"></div>
