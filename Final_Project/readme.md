@@ -125,8 +125,3 @@
   - An `if` condition checks whether a task matches the selected ID for deletion.
 
 ---
-
-## Style Notes:
-
-- Color palette for the styling.
-2D3142, 4F5D75, BFC0C0, FFFFFF, EF8354
