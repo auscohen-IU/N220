@@ -1,50 +1,157 @@
-console.log("taskManager.js file connected!");
+// Global variables to store users, current user, tasks, and a task ID counter
+let currentUser = null;
+let tasks = [];
+let taskIdCounter = 1;
 
-// Array consisting of users. Users consist of an object with a username and password.
-const knownUsers = [
-    { username: "admin", password: "Pa$5W0rd" }
+// Example user data (hardcoded for simplicity)
+const users = [
+    { username: 'johnDoe', password: 'Password123', tasks: [] }
 ];
 
-// Login attempt function
-function loginAttempt() {
-    const username = document.getElementById("usernameInput").value;
-    const password = document.getElementById("passwordInput").value;
-
-    const user = knownUsers.find(user => user.username === username);
-    if (!user) {
-        alert('Username not found. Please create an account.');
-    } else {
-        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$]).+$/;
-        if (!passwordRegex.test(password)) {
-            alert('ERROR: Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character (e.g., !, @, #, $).');
-        } else if (user.password !== password) {
-            alert('Incorrect password.');
-        } else {
-            alert('Login successful! Welcome to your task manager.');
-            document.getElementById("secondButton").innerText = "Logout";
-            document.getElementById("secondButton").onclick = logout;
-        }
-    }
-}
-
-// Logout function
-function logout() {
-    alert('You have been logged out.');
-    document.getElementById("secondButton").innerText = "Add User";
-    document.getElementById("secondButton").onclick = null; // Disable logout functionality
-}
-
-// Add task functionality
-document.querySelector('button[type="button"]').addEventListener('click', function() {
-    const taskInput = document.getElementById('taskInput');
-    const taskList = document.getElementById('taskList');
-
-    if (taskInput.value.trim() !== '') {
-        const taskItem = document.createElement('div');
-        taskItem.textContent = taskInput.value;
-        taskList.appendChild(taskItem);
-        taskInput.value = ''; // Clear input after adding task
-    } else {
-        alert('Please enter a task.');
-    }
+// Log known users and their passwords in the console
+console.log("Known users and passwords:");
+users.forEach(user => {
+    console.log(`Username: ${user.username}, Password: ${user.password}`);
 });
+
+// Function to validate login
+function validateLogin() {
+    const username = document.getElementById('usernameInput').value.trim();
+    const password = document.getElementById('passwordInput').value.trim();
+    const user = users.find(user => user.username === username);
+
+    // Validate username and password
+    if (username === '') {
+        alert('Please fill in the username.');
+        return false; 
+    }
+
+    if (password === '') {
+        alert('Please fill in the password.');
+        return false;
+    }
+
+    if (!isValidPassword(password)) {
+        alert('Password must be at least 8 characters long, contain at least 1 number, and 1 uppercase letter.');
+        return false; 
+    }
+
+    // If user doesn't exist, prompt to create a new one
+    if (!user) {
+        const createNewUser = confirm(`No user found with username "${username}". Would you like to create a new account?`);
+
+        if (createNewUser) {
+            const newPassword = prompt('Please enter a password for your new account:');
+
+            if (newPassword && isValidPassword(newPassword)) {
+                const newUser = {
+                    username: username,
+                    password: newPassword,
+                    tasks: []
+                };
+
+                users.push(newUser);
+                console.log(`New user created: Username: ${newUser.username}, Password: ${newUser.password}`);
+                alert('Account created successfully! You can now log in with your new credentials.');
+            } else {
+                alert('Password does not meet the required criteria.');
+            }
+        } else {
+            alert('You can try again with a valid username or password.');
+        }
+
+        return false;
+    }
+
+    // Validate user login
+    if (user.password !== password) {
+        alert('Invalid password.');
+        return false; 
+    }
+
+    // Successful login
+    currentUser = user;
+    console.log(`User logged in: Username: ${currentUser.username}, Password: ${currentUser.password}`);
+    showDashboard();
+    return false;
+}
+
+// Helper function to validate password
+function isValidPassword(password) {
+    return password.length >= 8 &&
+           /\d/.test(password) && // At least one number
+           /[A-Z]/.test(password); // At least one uppercase letter
+}
+
+// Function to show the dashboard and tasks
+function showDashboard() {
+    document.getElementById('loginContainer').style.display = 'none';
+    document.getElementById('dashboardContainer').style.display = 'block';
+    document.getElementById('userName').textContent = currentUser.username;
+    renderTasks();
+}
+
+// Function to render tasks on the dashboard
+function renderTasks() {
+    const taskList = document.getElementById('taskList');
+    taskList.innerHTML = '';
+
+    // Loop through the tasks array and display each task
+    currentUser.tasks.forEach((task, index) => {
+        const taskItem = document.createElement('li');
+        taskItem.classList.add('taskItem');
+        taskItem.innerHTML = `
+            <span>${task.description}</span>
+            <button onclick="deleteTask(${task.id})">Delete</button>
+            <button onclick="moveTask(${index}, 'up')">Move Up</button>
+            <button onclick="moveTask(${index}, 'down')">Move Down</button>
+        `;
+        taskList.appendChild(taskItem);
+    });
+}
+
+// Function to add a new task
+function addTask() {
+    const taskInput = document.getElementById('taskInput');
+    const taskDescription = taskInput.value.trim();
+
+    if (taskDescription === '') return;
+
+    // Create a new task object with a unique ID using the taskIdCounter
+    const newTask = {
+        id: taskIdCounter++,
+        description: taskDescription
+    };
+
+    // Add the new task to the current user's tasks array
+    currentUser.tasks.push(newTask);
+    taskInput.value = '';
+    renderTasks(); 
+}
+
+// Function to delete a task
+function deleteTask(taskId) {
+    currentUser.tasks = currentUser.tasks.filter(task => task.id !== taskId);
+    renderTasks();
+}
+
+// Function to move a task up or down
+function moveTask(index, direction) {
+    if (direction === 'up' && index > 0) {
+        // Swap the task with the one above
+        [currentUser.tasks[index], currentUser.tasks[index - 1]] = [currentUser.tasks[index - 1], currentUser.tasks[index]];
+    } else if (direction === 'down' && index < currentUser.tasks.length - 1) {
+        // Swap the task with the one below
+        [currentUser.tasks[index], currentUser.tasks[index + 1]] = [currentUser.tasks[index + 1], currentUser.tasks[index]];
+    }
+
+    renderTasks();
+}
+
+// Function to log the user out
+function logout() {
+    currentUser = null;
+    tasks = [];
+    document.getElementById('loginContainer').style.display = 'block';
+    document.getElementById('dashboardContainer').style.display = 'none';
+}

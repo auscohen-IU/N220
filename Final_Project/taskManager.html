@@ -6,29 +6,28 @@
     <title>Personal Task Manager</title>
 </head>
 <body>
-    <h1>Personal Task Manager</h1>
 
-    <!-- Username and Password Inputs -->
-    <div>
-        <h3>Username</h3>
-        <input id="usernameInput" type="text" name="usernameInput">
-        <h3>Password</h3>
-        <input id="passwordInput" type="password" name="passwordInput">
+    <div id="loginContainer">
+        <h2>Login</h2>
+        <form id="loginForm" onsubmit="return validateLogin()">
+            <label for="usernameInput">Username:</label>
+            <input type="text" id="usernameInput" required>
+            
+            <label for="passwordInput">Password:</label>
+            <input type="password" id="passwordInput" required>
+            
+            <button type="submit" id="loginButton">Login</button>
+            <div id="loginErrorMessage" class="errorMessage"></div>
+        </form>
     </div>
 
-    <!-- Login/Logout Buttons -->
-    <div>
-        <button id="loginButton" onclick="loginAttempt()">Login</button>
-        <button id="secondButton">Add User</button>
-    </div>
-    <br>
-
-    <!-- Task List Section -->
-    <div>
-        <h2>Task List</h2>
-        <input id="taskInput">
-        <button type="button">Add Task</button>
-        <section id="taskList"></section>
+    <div id="dashboardContainer" style="display: none;">
+        <h2>Welcome, <span id="userName"></span></h2>
+        <button id="logoutButton" onclick="logout()">Logout</button>
+        <h3>Your Tasks</h3>
+        <ul id="taskList"></ul>
+        <input type="text" id="taskInput" placeholder="Add a new task">
+        <button onclick="addTask()">Add Task</button>
     </div>
 
     <script src="taskManager.js"></script>
